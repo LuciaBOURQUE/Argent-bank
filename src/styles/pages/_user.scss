@@ -1,0 +1,34 @@
+@import "../../styles/utils/variables";
+@import "../../styles/utils/mixins";
+
+.bg-light {
+    background-color: #DDE2EA;
+    height: 100vh;
+    position: relative;
+}
+
+.main__content {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    &__header {
+        color: #2C3440;
+        margin-bottom: 2rem;
+    }
+}
+
+.edit-button {
+    @include buttonempty;
+}
+
+// portable
+@media (max-width: 650px) {
+    .main__content {
+        top: 60%;
+        &__header {
+            font-size: 0.8em;
+        }
+    }
+}
