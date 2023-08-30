@@ -2,15 +2,14 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import Navigation from "../components/Navigation"
-import AuthService from "../../redux/api/ServiceApi"
-import { logIn } from "../../redux/features/userSlice"
+import { getUserLogin } from "../../redux/apiServices"
+import { logIn } from "../../redux/userSlice"
 import "../../styles/index.scss"
 
 export default function SignIn() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [errorMessage, setErrorMessage] = useState("")
-  const { getUserLogin } = AuthService()
 
   const [user, setUser] = useState({
     email: "" /* tony@stark.com -  steve@rogers.com */,
@@ -32,7 +31,7 @@ export default function SignIn() {
       if (response.error) {
         setErrorMessage(response.error)
       } else {
-        dispatch(logIn({ token: response }))
+        dispatch(logIn({ token: response, email: user.email }))
         navigate("/profile")
       }
     }

@@ -1,21 +1,41 @@
-import { useParams } from "react-router-dom"
+//import { useParams } from "react-router-dom"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import AccountUser from "../components/AccountUser"
 import ProfilNavigation from "../components/ProfilNavigation"
+import { getUserToken } from "../../redux/apiServices"
+
 import profil from "../../assets/Tony-Stark.jpg"
 import "../../styles/index.scss"
+import { logInSuccess } from "../../redux/userSlice"
+import EditProfil from "../components/EditProfil"
 
 export default function User() {
-  const { id } = useParams()
+  const token = useSelector((state) => state.user.token)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    ;(async () => {
+      try {
+        const response = await getUserToken(token)
+        dispatch(
+          logInSuccess({
+            firstName: response.firstName,
+            lastName: response.lastName,
+          })
+        )
+      } catch (error) {
+        console.log(error)
+      }
+    })()
+  }, [dispatch, token])
 
   return (
     <div>
       <ProfilNavigation profil={profil} name={"Tony Stark"} />
       <main className="main bg-light">
         <div className="main__content">
-          <div className="main__content__header">
-            <h1>Welcome back</h1>
-            <button className="edit-button">Edit Name</button>
-          </div>
+          <EditProfil />
           <AccountUser
             accountTitle={"Argent Bank Checking (x8349)"}
             accountAmount={"$2,082.79"}
@@ -36,3 +56,10 @@ export default function User() {
     </div>
   )
 }
+
+/*
+          <div className="main__content__header">
+            <h1>Welcome back</h1>
+            <button className="edit-button">Edit Name</button>
+          </div>
+*/
