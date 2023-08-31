@@ -6,7 +6,6 @@ export const getUserLogin = async (email, password) => {
       "http://localhost:3001/api/v1/user/login",
       { email, password }
     )
-    console.log(response.data.body.token)
     return response.data.body.token
   } catch (e) {
     if (e.response.data.message === "Error: User not found!") {

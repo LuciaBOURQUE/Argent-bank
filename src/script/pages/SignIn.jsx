@@ -20,7 +20,6 @@ export default function SignIn() {
     setUser({ ...user, [e.target.name]: e.target.value })
   }
 
-  // Comprendre en quoi le async/await ici joue un rôle dominant sur le token ?
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (user.email === "" || user.password === "") {
@@ -36,8 +35,6 @@ export default function SignIn() {
       }
     }
   }
-
-  //<Navigation />
 
   return (
     <>

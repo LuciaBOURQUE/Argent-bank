@@ -47,9 +47,12 @@ body {
   align-items: center;
   margin-right: 20px;
 }
-.nav-setting-content h3 {
+.nav-setting-content a {
   margin-left: 5px;
   text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  color: #2c3e50;
 }
 
 .main-nav {

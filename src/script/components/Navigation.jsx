@@ -52,9 +52,7 @@ export default function ProfilNavigation() {
                 fill="black"
               />
             </svg>
-            <NavLink to="/profile">
-              <h3>{firstName}</h3>
-            </NavLink>
+            <NavLink to="/profile">{firstName}</NavLink>
           </div>{" "}
           <NavLink to="/" onClick={logOutProfil} className="nav-setting-button">
             <svg
