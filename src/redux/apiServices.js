@@ -39,11 +39,11 @@ export const getUserToken = async (token) => {
 }
 
 /*
-export const putUserInfos = async (token, user) => {
+export const putUserInfos = async (token, firstName, lastName) => {
   try {
     const response = await axios.put(
       "http://localhost:3001/api/v1/user/profile",
-      user,
+      { firstName, lastName },
       {
         headers: {
           Authorization: `Bearer ${token}`,

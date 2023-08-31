@@ -7,8 +7,7 @@ export default function EditProfil() {
   const dispatch = useDispatch()
   const firstName = useSelector((state) => state.user.firstName)
   const lastName = useSelector((state) => state.user.lastName)
-  const state = useSelector((state) => state.user)
-  console.log(state)
+
   const [user, setUser] = useState({
     firstName: "" /* Tony-  Steve */,
     lastName: "" /* Stark - Rogers */,
@@ -16,6 +15,11 @@ export default function EditProfil() {
 
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
+  }
+
+  const [inputShow, setInputShow] = useState(false)
+  const onClick = () => {
+    setInputShow(true)
   }
 
   const handleSubmit = async (e) => {
@@ -31,35 +35,55 @@ export default function EditProfil() {
 
   return (
     <header className="header-profil">
-      <h1>Welcome back {firstName}</h1>
-      <div>
-        <div className="input-wrapper">
-          <label htmlFor="firstName"></label>
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            onChange={onChange}
-            value={user.firstName}
-            placeholder={firstName}
-          />
-        </div>
-
-        <div className="input-wrapper">
-          <label htmlFor="lastName"></label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            onChange={onChange}
-            value={user.lastName}
-            placeholder={lastName}
-          />
-        </div>
+      <div className="header-profil_edit">
+        <h1>Welcome back {firstName}</h1>
+        <button
+          className="edit-button edit-button-display"
+          style={{ display: inputShow ? "none" : "block" }}
+          onClick={onClick}
+        >
+          Edit Name
+        </button>{" "}
       </div>
-      <button className="edit-button" onSubmit={handleSubmit}>
-        Edit Name
-      </button>
+      {inputShow ? (
+        <div className="header-profil_input">
+          <div className="input-bloc1">
+            <div className="input-wrapper">
+              <label htmlFor="firstName"></label>
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                onChange={onChange}
+                value={user.firstName}
+                placeholder={firstName}
+              />
+            </div>
+            <button
+              className="edit-button"
+              method="put"
+              onSubmit={handleSubmit}
+            >
+              Save
+            </button>
+          </div>
+
+          <div className="input-bloc2">
+            <div className="input-wrapper">
+              <label htmlFor="lastName"></label>
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                onChange={onChange}
+                value={user.lastName}
+                placeholder={lastName}
+              />
+            </div>
+            <button className="edit-button">Cancel</button>
+          </div>
+        </div>
+      ) : null}
     </header>
   )
 }

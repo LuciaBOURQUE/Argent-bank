@@ -1,0 +1,41 @@
+.header-profil {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  &_edit {
+    display: flex;
+    align-items: center;
+    .edit-button {
+      @include buttonempty;
+      height: fit-content;
+      margin-left: 20px;
+    }
+  }
+  &_input {
+    display: flex;
+    input,
+    button {
+      @include buttonempty;
+    }
+  }
+}
+
+.input-wrapper {
+  margin-bottom: 10px;
+}
+
+.input-bloc1,
+.input-bloc2 {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 15px;
+}
+.input-bloc1 {
+  align-items: flex-end;
+}
+.input-bloc2 {
+  align-items: flex-start;
+}
