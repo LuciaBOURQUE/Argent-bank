@@ -1,10 +1,11 @@
 import { useState } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { logInSuccess } from "../../redux/userSlice"
+import { useSelector } from "react-redux"
+import { putUserInfos } from "../../redux/apiServices"
 import "../../styles/index.scss"
 
 export default function EditProfil() {
-  const dispatch = useDispatch()
+  //const dispatch = useDispatch()
+  const token = useSelector((state) => state.user.token)
   const firstName = useSelector((state) => state.user.firstName)
   const lastName = useSelector((state) => state.user.lastName)
 
@@ -24,13 +25,9 @@ export default function EditProfil() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(user.firstName)
-    dispatch(
-      logInSuccess({
-        firstName: user.firstName,
-        lastName: user.lastName,
-      })
-    )
+    console.log("Cliker")
+    const response = await putUserInfos(token, user.firstName, user.lastName)
+    console.log(response)
   }
 
   return (
@@ -59,11 +56,7 @@ export default function EditProfil() {
                 placeholder={firstName}
               />
             </div>
-            <button
-              className="edit-button"
-              method="put"
-              onSubmit={handleSubmit}
-            >
+            <button className="edit-button" onClick={handleSubmit}>
               Save
             </button>
           </div>

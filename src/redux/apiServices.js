@@ -38,20 +38,21 @@ export const getUserToken = async (token) => {
   }
 }
 
-/*
 export const putUserInfos = async (token, firstName, lastName) => {
   try {
+    console.log(firstName, lastName)
     const response = await axios.put(
       "http://localhost:3001/api/v1/user/profile",
-      { firstName, lastName },
+      { firstName: firstName, lastName: lastName },
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }
     )
+    console.log(response.data.body)
     return response.data.body
   } catch (e) {
     console.log(e)
   }
-}*/
+}
