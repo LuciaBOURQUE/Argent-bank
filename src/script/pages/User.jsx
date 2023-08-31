@@ -1,20 +1,24 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import AccountUser from "../components/AccountUser"
-import ProfilNavigation from "../components/ProfilNavigation"
+import Navigation from "../components/Navigation"
 import { getUserToken } from "../../redux/apiServices"
 
-import profil from "../../assets/Tony-Stark.jpg"
 import "../../styles/index.scss"
 import { logInSuccess } from "../../redux/userSlice"
 import EditProfil from "../components/EditProfil"
 
 export default function User() {
   const token = useSelector((state) => state.user.token)
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   useEffect(() => {
     ;(async () => {
+      if (!token) {
+        navigate("/login")
+      }
       try {
         const response = await getUserToken(token)
         dispatch(
@@ -27,11 +31,11 @@ export default function User() {
         console.log(error)
       }
     })()
-  }, [dispatch, token])
+  }, [dispatch, navigate, token])
 
   return (
     <div>
-      <ProfilNavigation profil={profil} name={"Tony Stark"} />
+      <Navigation />
       <main className="main bg-light">
         <div className="main__content">
           <EditProfil />

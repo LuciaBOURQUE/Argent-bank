@@ -1,14 +1,22 @@
-.main-nav {
+.nav-profil {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
-    a {
-        font-weight: bold;
-        color: #2c3e50;
+    &_setting {
+        display: flex;
+        align-items: center;
+    }
+    &_signin, .nav-setting-button {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-right: 0.5rem;
+        svg {
+            margin-right: 5px;
+        }
     }
 }
-  
+
 .main-nav-logo {
     display: flex;
     align-items: center;
@@ -18,15 +26,27 @@
       }
 }
 
-.main-nav-item {
+.nav-profil_signin:hover, .nav-setting-button:hover {
+    text-decoration: underline;
+}
+
+.nav-setting-content {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    margin-right: 0.5rem;
-    svg {
-        margin-right: 5px;
+    margin-right: 20px;
+    h3 {
+        margin-left: 5px;
+        text-decoration: none;
     }
-    &:hover {
-        text-decoration: underline;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    a {
+        font-weight: bold;
+        color: #2c3e50;
     }
 }

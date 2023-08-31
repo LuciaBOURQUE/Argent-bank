@@ -50,7 +50,6 @@ export const putUserInfos = async (token, firstName, lastName) => {
         },
       }
     )
-    console.log(response.data.body)
     return response.data.body
   } catch (e) {
     console.log(e)

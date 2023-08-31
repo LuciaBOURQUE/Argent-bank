@@ -4,7 +4,6 @@ import { putUserInfos } from "../../redux/apiServices"
 import "../../styles/index.scss"
 
 export default function EditProfil() {
-  //const dispatch = useDispatch()
   const token = useSelector((state) => state.user.token)
   const firstName = useSelector((state) => state.user.firstName)
   const lastName = useSelector((state) => state.user.lastName)

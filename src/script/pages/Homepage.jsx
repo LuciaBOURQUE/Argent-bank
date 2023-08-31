@@ -1,8 +1,11 @@
 import Navigation from "../components/Navigation"
+//import Navigation from "../components/Navigation"
 import iconcat from "../../assets/icon-chat.png"
 import iconmoney from "../../assets/icon-money.png"
 import iconsecurity from "../../assets/icon-security.png"
 import "../../styles/index.scss"
+
+//<Navigation />
 
 export default function Homepage() {
   return (
