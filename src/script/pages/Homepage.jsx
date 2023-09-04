@@ -1,11 +1,9 @@
 import Navigation from "../components/Navigation"
-//import Navigation from "../components/Navigation"
-import iconcat from "../../assets/icon-chat.png"
-import iconmoney from "../../assets/icon-money.png"
-import iconsecurity from "../../assets/icon-security.png"
+import Cards from "../components/Cards"
+import iconcat from "../../assets/chat.svg"
+import iconmoney from "../../assets/money.svg"
+import iconsecurity from "../../assets/security.svg"
 import "../../styles/index.scss"
-
-//<Navigation />
 
 export default function Homepage() {
   return (
@@ -13,47 +11,37 @@ export default function Homepage() {
       <header>
         <Navigation />
       </header>
-      <main className="">
-        <div className="hero">
-          <section className="hero__content">
-            <p className="subtitle">No fees.</p>
-            <p className="subtitle">No minimum deposit.</p>
-            <p className="subtitle">High interest rates.</p>
-            <p className="text">
-              Open a savings account with Argent Bank today!
-            </p>
-          </section>
-        </div>
-        <section className="features">
-          <div className="feature__item">
-            <img src={iconcat} alt="icon cat" className="feature-icon" />
-            <h3 className="feature__item__title">You are our #1 priority</h3>
-            <p>
-              Need to talk to a representative ? You can get in touch through
-              our 24/7 chat or through a phone call in less than 5 minutes.
-            </p>
-          </div>
-          <div className="feature__item">
-            <img src={iconmoney} alt="icon money" className="feature-icon" />
-            <h3 className="feature__item__title">
-              More savings means higher rates
-            </h3>
-            <p>
-              The more you save with us, the higher your interest rate will be!
-            </p>
-          </div>
-          <div className="feature__item">
-            <img
-              src={iconsecurity}
-              alt="icon security"
-              className="feature-icon"
-            />
-            <h3 className="feature__item__title">Security you can trust</h3>
-            <p>
-              We use top of the line encryption to make sure your data and money
-              is always safe.
-            </p>
-          </div>
+      <main className="hero">
+        <section className="hero_title">
+          <h1>
+            No fees. <br />
+            No minimum deposit. <br />
+            <span className="text-span">High interest rates.</span>
+          </h1>
+          <h2>Open a saving account with Argent Bank today!</h2>
+        </section>
+        <section className="hero_cards">
+          <Cards
+            iconImage={iconcat}
+            cardTitle={"You are our #1 priority"}
+            cardText={
+              "Need to talk to a representative ? You can get in touch through our 24/7 chat or through a phone call in less than 5 minutes."
+            }
+          />
+          <Cards
+            iconImage={iconmoney}
+            cardTitle={"More savings means higher rates"}
+            cardText={
+              "The more you save with us, the higher your interest rate will be!"
+            }
+          />
+          <Cards
+            iconImage={iconsecurity}
+            cardTitle={"Security you can trust"}
+            cardText={
+              "We use top of the line encryption to make sure your data and money is always safe."
+            }
+          />
         </section>
       </main>
     </>

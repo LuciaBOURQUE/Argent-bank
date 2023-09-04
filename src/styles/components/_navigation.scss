@@ -1,18 +1,28 @@
+@import "../utils/variables";
+
 .nav-profil {
+    margin: 20px 12%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     &_setting {
+        background-color: white;
         display: flex;
         align-items: center;
     }
     &_signin, .nav-setting-button {
+        color: $Green01 ;
+        font-size: 18px;
+        font-weight: bold;
+        border: 2px solid rgba(36, 75, 48, 0.5);
+        border-radius: 25px;
+        padding: 10px 15px;
         display: flex;
         align-items: center;
         text-decoration: none;
         margin-right: 0.5rem;
-        svg {
-            margin-right: 5px;
+        img {
+            margin-right: 10px;
         }
     }
 }
@@ -20,6 +30,7 @@
 .main-nav-logo {
     display: flex;
     align-items: center;
+    mix-blend-mode: darken;
     &__image {
         max-width: 100%;
         width: 200px;
@@ -27,7 +38,9 @@
 }
 
 .nav-profil_signin:hover, .nav-setting-button:hover {
-    text-decoration: underline;
+    border: 2px solid transparent;
+    background-color: rgba(89, 173, 113, 0.5);
+    color: $Green01;
 }
 
 .nav-setting-content {
@@ -51,5 +64,12 @@
     a {
         font-weight: bold;
         color: #2c3e50;
+    }
+}
+
+// Full screen
+@media (min-width: 1700px) {
+    .nav-profil {
+        margin: 20px 15%;
     }
 }

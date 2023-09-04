@@ -8,30 +8,58 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #f3f3f3;
 }
 
+h1 {
+  font-size: 45px;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+p {
+  font-size: 16px;
+}
+
+@media (max-width: 1250px) {
+  h1 {
+    font-size: 35px;
+  }
+}
 .nav-profil {
+  margin: 20px 12%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .nav-profil_setting {
+  background-color: white;
   display: flex;
   align-items: center;
 }
 .nav-profil_signin, .nav-profil .nav-setting-button {
+  color: #244B30;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid rgba(36, 75, 48, 0.5);
+  border-radius: 25px;
+  padding: 10px 15px;
   display: flex;
   align-items: center;
   text-decoration: none;
   margin-right: 0.5rem;
 }
-.nav-profil_signin svg, .nav-profil .nav-setting-button svg {
-  margin-right: 5px;
+.nav-profil_signin img, .nav-profil .nav-setting-button img {
+  margin-right: 10px;
 }
 
 .main-nav-logo {
   display: flex;
   align-items: center;
+  mix-blend-mode: darken;
 }
 .main-nav-logo__image {
   max-width: 100%;
@@ -39,7 +67,9 @@ body {
 }
 
 .nav-profil_signin:hover, .nav-setting-button:hover {
-  text-decoration: underline;
+  border: 2px solid transparent;
+  background-color: rgba(89, 173, 113, 0.5);
+  color: #244B30;
 }
 
 .nav-setting-content {
@@ -66,10 +96,14 @@ body {
   color: #2c3e50;
 }
 
+@media (min-width: 1700px) {
+  .nav-profil {
+    margin: 20px 15%;
+  }
+}
 .footer {
   display: flex;
   justify-content: center;
-  border-top: 2px solid #ccc;
   padding: 2rem 0 1.5rem;
 }
 .footer .footer-text {
@@ -113,7 +147,7 @@ body {
 .transaction-button {
   border: transparent;
   border-radius: 5px;
-  background-color: #5457EC;
+  background-color: blue;
   color: white;
   font-weight: lighter;
   padding: 10px;
@@ -145,7 +179,7 @@ body {
   border: 1px solid rgba(84, 87, 236, 0.5);
   border-radius: 5px;
   background-color: white;
-  color: #5457EC;
+  color: blue;
   font-weight: lighter;
   padding: 10px;
   font-size: 1.1rem;
@@ -161,7 +195,7 @@ body {
   border: 1px solid rgba(84, 87, 236, 0.5);
   border-radius: 5px;
   background-color: white;
-  color: #5457EC;
+  color: blue;
   font-weight: lighter;
   padding: 10px;
   font-size: 1.1rem;
@@ -186,83 +220,117 @@ body {
   align-items: flex-start;
 }
 
-.hero {
-  background-image: url("../../assets/bank-tree.jpeg");
-  background-position: 0 -50px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 300px;
-  position: relative;
-}
-.hero__content {
-  position: relative;
-  top: 2rem;
-  width: 200px;
-  background: white;
-  padding: 2rem;
-  text-align: left;
-  margin: 0 auto;
-}
-.hero__content .subtitle {
-  font-weight: bold;
-  font-size: 1rem;
-  margin: 0;
-}
-.hero__content .text {
-  margin-bottom: 0;
-  font-size: 0.9rem;
+.cards {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: -9px 10px 10px rgba(54, 54, 54, 0.1019607843);
+  gap: 10px;
+  padding: 15px 20px;
+  width: 280px;
 }
 
-.features {
+.cards_content {
+  display: flex;
+  flex-direction: column;
+}
+.cards_content_title {
+  color: #FFFFFF;
+  text-align: left;
+  margin: 0px;
+  font-weight: 500;
+}
+.cards_content_text {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 10px 0px 5px 0px;
+}
+
+.icon {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  position: relative;
+}
+.icon_image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 25px;
+  width: 25px;
+}
+
+.hero {
   display: flex;
   justify-content: space-between;
-  margin: 5%;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  margin: 0px 12%;
+  padding: 5% 5%;
+  height: 400px;
 }
-.features .feature__item {
-  width: 30%;
+.hero_title {
+  display: flex;
+  flex-direction: column;
 }
-.features .feature__item__title {
-  color: #222;
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.hero_title h1, .hero_title h2 {
+  color: #0D1117;
+  text-align: left;
+  margin: 0px;
+}
+.hero_title .text-span {
+  color: #59AD71;
+  font-weight: 500;
 }
 
-.feature-icon {
-  width: 100px;
-  border: 10px solid #00bc77;
-  border-radius: 50%;
-  padding: 1rem;
+.hero_cards {
+  position: relative;
+  width: 60%;
+  background-image: url("../../assets/background.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.hero_cards .cards:nth-child(1) {
+  background-color: #59AD71;
+  position: absolute;
+  right: 0px;
+  z-index: 3;
+}
+.hero_cards .cards:nth-child(2) {
+  background-color: #244B30;
+  position: absolute;
+  top: 130px;
+  right: 80px;
+  z-index: 2;
+}
+.hero_cards .cards:nth-child(3) {
+  background-color: #F7F7F7;
+  position: absolute;
+  right: 160px;
+  top: 260px;
+  z-index: 1;
+}
+.hero_cards .cards:nth-child(3) .cards_content_title, .hero_cards .cards:nth-child(3) .cards_content_text {
+  color: #244B30;
+}
+.hero_cards .cards:nth-child(3) .icon {
+  background-color: rgba(89, 173, 113, 0.3);
 }
 
-@media (min-width: 920px) {
+.hero_title h2 {
+  font-weight: lighter;
+  margin-top: 20px;
+}
+
+@media (min-width: 1700px) {
   .hero {
-    height: 400px;
-    background-position: 0% 33%;
-  }
-  .hero__content {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    width: 300px;
-    margin: 2rem;
-  }
-  .hero__content .subtitle {
-    font-size: 1.5rem;
-  }
-  .hero__content .text {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 650px) {
-  .features {
-    flex-direction: column;
-  }
-  .features .feature__item {
-    width: 100%;
-  }
-  .feature-icon {
-    width: 50px;
+    margin: 0px 15%;
   }
 }
 .color {
@@ -308,7 +376,7 @@ form .input-wrapper input {
   border: 1px solid rgba(84, 87, 236, 0.5);
   border-radius: 5px;
   background-color: white;
-  color: #5457EC;
+  color: blue;
   font-weight: lighter;
   padding: 10px;
   font-size: 1.1rem;
@@ -321,7 +389,7 @@ form .input-wrapper input {
 .sign-in-button {
   border: transparent;
   border-radius: 5px;
-  background-color: #5457EC;
+  background-color: blue;
   color: white;
   font-weight: lighter;
   padding: 10px;
@@ -353,7 +421,7 @@ form .input-wrapper input {
   border: 1px solid rgba(84, 87, 236, 0.5);
   border-radius: 5px;
   background-color: white;
-  color: #5457EC;
+  color: blue;
   font-weight: lighter;
   padding: 10px;
   font-size: 1.1rem;

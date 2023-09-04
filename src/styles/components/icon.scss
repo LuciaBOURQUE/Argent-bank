@@ -1,0 +1,15 @@
+.icon {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    position: relative;
+      &_image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        height: 25px;
+        width: 25px;
+      }
+}

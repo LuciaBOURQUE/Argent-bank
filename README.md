@@ -1,4 +1,4 @@
-# Argent Bank
+# Argent Bank 💲
 
 13's project of Openclassrooms
 
