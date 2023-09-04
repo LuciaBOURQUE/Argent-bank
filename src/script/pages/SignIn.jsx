@@ -41,53 +41,54 @@ export default function SignIn() {
       <header>
         <Navigation />
       </header>
-      <main className="main bg-dark">
-        <section className="sign-in-content">
-          <i className="fa fa-user-circle sign-in-icon"></i>
-          <h1>Sign In</h1>
+      <main className="signin-page">
+        <div className="signin-page_content">
+          {" "}
+          <h1>
+            Sign in to
+            <br />
+            <span className="text-span-signin">Argent Bank</span>
+          </h1>
+          <h2>And access of all your transactions!</h2>
+        </div>
 
-          <form method="post" onSubmit={handleSubmit}>
-            <div className="input-wrapper">
-              <label htmlFor="email">Username</label>
-              <input
-                type="text"
-                name="email"
-                id="email"
-                onChange={onChange}
-                value={user.email}
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            <div className="input-wrapper">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                onChange={onChange}
-                value={user.password}
-                placeholder="Enter your password"
-                required
-              />
-            </div>
-            <div className="input-remember">
-              <input
-                type="checkbox"
-                name="remember-me"
-                id="remember-me"
-                defaultChecked={false}
-                //onClick={() => setRemember(!remember)}
-                //required
-              />
-              <label htmlFor="remember-me">Remember me</label>
-            </div>
-            <span className="error-message">{errorMessage}</span>
-            <button type="submit" className="sign-in-button">
-              Sign In
-            </button>
-          </form>
-        </section>
+        <form method="post" onSubmit={handleSubmit}>
+          <div className="input-wrapper">
+            <label htmlFor="email">Username</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              onChange={onChange}
+              value={user.email}
+              required
+            />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              onChange={onChange}
+              value={user.password}
+              required
+            />
+          </div>
+          <div className="input-remember">
+            <input
+              type="checkbox"
+              name="remember-me"
+              id="remember-me"
+              defaultChecked={false}
+            />
+            <label htmlFor="remember-me">Remember me</label>
+          </div>
+          <span className="error-message">{errorMessage}</span>
+          <button type="submit" className="sign-in-button">
+            Sign In
+          </button>
+        </form>
       </main>
     </>
   )

@@ -1,54 +1,80 @@
 @import "../../styles/utils/mixins";
 
-.color {
-    color: white;
-}
-
-.bg-dark {
-    background-color: #12002b;
-    height: 100vh;
-    position: relative;
-}
-
-.sign-in-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+.signin-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px 12%;
     box-sizing: border-box;
-    background-color: white;
-    width: 300px;
+    border-radius: 30px;
+    background-color: $White;
+    width: 440px;
     padding: 2rem;
-    .sign-in-icon {
-    font-size: 5rem;
+    &_content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        h1, h2 {
+            color: $Blackgreen;
+            text-align: left;
+            margin: 10px 0px;
+        }
+        h2 {
+            font-weight: 400;
+        }
+        .text-span-signin {
+            color: $Green02;
+            font-weight: 500;
+        }
     }
 }
+
+
 form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    .input-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-bottom: 1rem;
+        label {
+            font-weight: 500;
+            margin-bottom: 8px; 
+        }
+        input {
+            @include buttonempty;
+        }
+    }
 }
 
-form .input-wrapper {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-bottom: 1rem;
+.input-remember {
     label {
-        font-weight: bold;
+        margin-left: 0.25rem;
     }
-    input {
-        @include buttonempty;
-    }
+    
 }
-  
-.input-remember label {
-    margin-left: 0.25rem;
+
+.error-message {
+    margin-top: 5px;
+    color: red;
+    font-weight: 500;
 }
 
 .sign-in-button {
     @include buttonfull;
+    border-radius: 50px;
     display: block;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 40px;
 }
+
+// Full screen
+/*
+@media (min-width: 1700px) {
+    .signin {
+        margin: 0px 15%;
+    }
+}*/
