@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { putUserInfos } from "../../redux/apiServices"
 import { logInSuccess } from "../../redux/userSlice"
@@ -10,7 +9,6 @@ export default function EditProfil() {
   const token = useSelector((state) => state.user.token)
   const firstName = useSelector((state) => state.user.firstName)
   const lastName = useSelector((state) => state.user.lastName)
-  const [buttonDisabled, setbuttonDisabled] = useState(true)
 
   const [user, setUser] = useState({
     firstName: "" /* Tony-  Steve */,
@@ -45,15 +43,6 @@ export default function EditProfil() {
     }
   }
 
-  useEffect(() => {
-    if (!user.firstName === "" || !user.firstName === firstName) {
-      //console.log("vide ou idem")
-      setbuttonDisabled(false)
-    } else {
-      setbuttonDisabled(true)
-    }
-  }, [])
-
   return (
     <section className="header-profil">
       <div className="header-profil_edit">
@@ -85,7 +74,9 @@ export default function EditProfil() {
             <button
               className="save-button"
               onClick={handleSubmit}
-              disabled={buttonDisabled}
+              disabled={
+                user.firstName === "" || user.lastName === "" ? true : false
+              }
             >
               Save
             </button>
