@@ -1,12 +1,16 @@
-import { useState } from "react"
-import { useSelector } from "react-redux"
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from "react"
+import { useSelector, useDispatch } from "react-redux"
 import { putUserInfos } from "../../redux/apiServices"
+import { logInSuccess } from "../../redux/userSlice"
 import "../../styles/index.scss"
 
 export default function EditProfil() {
+  const dispatch = useDispatch()
   const token = useSelector((state) => state.user.token)
   const firstName = useSelector((state) => state.user.firstName)
   const lastName = useSelector((state) => state.user.lastName)
+  const [buttonDisabled, setbuttonDisabled] = useState(true)
 
   const [user, setUser] = useState({
     firstName: "" /* Tony-  Steve */,
@@ -17,6 +21,9 @@ export default function EditProfil() {
   const onClick = () => {
     setInputShow(true)
   }
+  const onClickclose = () => {
+    setInputShow(false)
+  }
 
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
@@ -24,14 +31,35 @@ export default function EditProfil() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await putUserInfos(token, user.firstName, user.lastName)
-    console.log(response)
+    console.log("clické")
+    try {
+      const response = await putUserInfos(token, user.firstName, user.lastName)
+      dispatch(
+        logInSuccess({
+          firstName: response.firstName,
+          lastName: response.lastName,
+        })
+      )
+    } catch (error) {
+      console.log(error)
+    }
   }
+
+  useEffect(() => {
+    if (!user.firstName === "" || !user.firstName === firstName) {
+      //console.log("vide ou idem")
+      setbuttonDisabled(false)
+    } else {
+      setbuttonDisabled(true)
+    }
+  }, [])
 
   return (
     <section className="header-profil">
       <div className="header-profil_edit">
-        <h1>Welcome back {firstName}</h1>
+        <h2>
+          Welcome back <span>{firstName}</span>
+        </h2>
         <button
           className="edit-button edit-button-display"
           style={{ display: inputShow ? "none" : "block" }}
@@ -54,7 +82,11 @@ export default function EditProfil() {
                 placeholder={firstName}
               />
             </div>
-            <button className="edit-button" onClick={handleSubmit}>
+            <button
+              className="save-button"
+              onClick={handleSubmit}
+              disabled={buttonDisabled}
+            >
               Save
             </button>
           </div>
@@ -71,7 +103,9 @@ export default function EditProfil() {
                 placeholder={lastName}
               />
             </div>
-            <button className="edit-button">Cancel</button>
+            <button className="edit-button" onClick={onClickclose}>
+              Cancel
+            </button>
           </div>
         </div>
       ) : null}

@@ -35,14 +35,10 @@
     }
 }
 
-.nav-profil_signin:hover, .nav-setting-button:hover {
-    @include buttonhoverempty;
-}
-
 .nav-setting-content {
     margin-right: 15px;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     color: $Green01 ;
 }

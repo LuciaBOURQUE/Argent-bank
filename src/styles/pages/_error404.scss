@@ -14,10 +14,6 @@
     }
 }
 
-.error-page_button:hover {
-    @include buttonhoverempty;
-}
-
 // Full screen
 @media (min-width: 1700px) {
     .error-page {

@@ -33,6 +33,10 @@ p {
   font-size: 16px;
 }
 
+a {
+  font-family: "Inter", Avenir, Helvetica, Arial, sans-serif;
+}
+
 @media (max-width: 1250px) {
   h1 {
     font-size: 35px;
@@ -60,6 +64,7 @@ p {
 }
 
 .nav-profil_signin, .nav-setting-button {
+  background-color: transparent;
   border: 2px solid rgba(36, 75, 48, 0.3);
   border-radius: 50px;
   color: #244B30;
@@ -71,20 +76,19 @@ p {
   text-decoration: none;
   margin-right: 0.5rem;
 }
-.nav-profil_signin img, .nav-setting-button img {
-  margin-right: 10px;
-}
-
 .nav-profil_signin:hover, .nav-setting-button:hover {
   border: 2px solid transparent;
   background-color: rgba(89, 173, 113, 0.5);
   color: #244B30;
 }
+.nav-profil_signin img, .nav-setting-button img {
+  margin-right: 10px;
+}
 
 .nav-setting-content {
   margin-right: 15px;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   color: #244B30;
 }
@@ -146,6 +150,10 @@ p {
   width: 200px;
   margin-top: 1rem;
 }
+.transaction-button:hover {
+  background-color: #59AD71;
+  color: #FFFFFF;
+}
 
 .header-profil {
   width: 80%;
@@ -159,28 +167,67 @@ p {
   display: flex;
   align-items: center;
 }
+.header-profil_edit h2 {
+  font-weight: 500;
+}
+.header-profil_edit span {
+  color: #59AD71;
+  font-weight: 600;
+}
 .header-profil_edit .edit-button {
+  background-color: transparent;
   border: 2px solid rgba(36, 75, 48, 0.3);
   border-radius: 50px;
   color: #244B30;
   padding: 13px 20px;
   font-size: 16px;
   font-weight: 600;
-  height: -moz-fit-content;
-  height: fit-content;
   margin-left: 20px;
+}
+.header-profil_edit .edit-button:hover {
+  border: 2px solid transparent;
+  background-color: rgba(89, 173, 113, 0.5);
+  color: #244B30;
 }
 .header-profil_input {
   display: flex;
 }
-.header-profil_input input,
+.header-profil_input input {
+  border: 2px solid rgba(36, 75, 48, 0.3);
+  border-radius: 5px;
+  color: #244B30;
+  font-weight: lighter;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
 .header-profil_input button {
+  background-color: transparent;
   border: 2px solid rgba(36, 75, 48, 0.3);
   border-radius: 50px;
   color: #244B30;
   padding: 13px 20px;
   font-size: 16px;
   font-weight: 600;
+}
+.header-profil_input button:hover {
+  border: 2px solid transparent;
+  background-color: rgba(89, 173, 113, 0.5);
+  color: #244B30;
+}
+
+.save-button {
+  border: transparent;
+  border-radius: 50px;
+  background-color: #244B30;
+  color: #FFFFFF;
+  padding: 13px 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.save-button:hover {
+  background-color: #59AD71;
+  color: #FFFFFF;
 }
 
 .input-wrapper {
@@ -367,7 +414,7 @@ form .input-wrapper input {
   border-radius: 5px;
   color: #244B30;
   font-weight: lighter;
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -394,7 +441,6 @@ form .input-wrapper input {
   width: 100%;
   margin-top: 40px;
 }
-
 .sign-in-button:hover {
   background-color: #59AD71;
   color: #FFFFFF;
@@ -430,6 +476,7 @@ form .input-wrapper input {
 }
 .error-page_button {
   text-decoration: none;
+  background-color: transparent;
   border: 2px solid rgba(36, 75, 48, 0.3);
   border-radius: 50px;
   color: #244B30;
@@ -438,7 +485,6 @@ form .input-wrapper input {
   font-weight: 600;
   border-radius: 50px;
 }
-
 .error-page_button:hover {
   border: 2px solid transparent;
   background-color: rgba(89, 173, 113, 0.5);

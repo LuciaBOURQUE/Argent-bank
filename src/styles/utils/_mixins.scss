@@ -8,15 +8,25 @@
     padding: 13px 20px;
     font-size: 16px;
     font-weight: 600;
+    &:hover {
+        background-color: $Green02;
+        color: $White;
+    }
 }
 
 @mixin buttonempty {
+    background-color: transparent;
     border: 2px solid rgba(36, 75, 48, 0.3);
     border-radius: 50px;
     color: $Green01;
     padding: 13px 20px;
     font-size: 16px;
     font-weight: 600;
+    &:hover {
+        border: 2px solid transparent;
+        background-color: rgba(89, 173, 113, 0.5);
+        color: $Green01;
+    }
 }
 
 @mixin inputfield {
@@ -24,18 +34,7 @@
     border-radius: 5px;
     color: $Green01;
     font-weight:lighter;
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 16px;
     font-weight: 500;
-}
-
-@mixin buttonhoverempty {
-    border: 2px solid transparent;
-    background-color: rgba(89, 173, 113, 0.5);
-    color: $Green01;
-}
-
-@mixin buttonhoverfull {
-    background-color: $Green02;
-    color: $White;
 }

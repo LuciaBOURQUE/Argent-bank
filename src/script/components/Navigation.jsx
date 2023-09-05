@@ -10,6 +10,7 @@ import "../../styles/index.scss"
 export default function ProfilNavigation() {
   const token = useSelector((state) => state.user.token)
   const firstName = useSelector((state) => state.user.firstName)
+  const lastName = useSelector((state) => state.user.lastName)
   const [showSignin, setShowSignin] = useState(true)
   const [showLogOut, setShowLogout] = useState(false)
   const dispatch = useDispatch()
@@ -40,7 +41,7 @@ export default function ProfilNavigation() {
       {showLogOut ? (
         <div className="nav-profil_logout">
           <NavLink className="nav-setting-content" to="/profile">
-            {firstName}
+            {firstName} {lastName}
           </NavLink>{" "}
           <NavLink to="/" onClick={logOutProfil} className="nav-setting-button">
             <img className="icon-profile" alt="" src={logout} />

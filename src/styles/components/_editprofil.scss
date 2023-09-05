@@ -1,3 +1,6 @@
+@import "../utils/variables";
+@import "../../styles/utils/mixins";
+
 .header-profil {
   width: 80%;
   display: flex;
@@ -8,19 +11,31 @@
   &_edit {
     display: flex;
     align-items: center;
+    h2 {
+      font-weight: 500;
+    }
+    span {
+      color: $Green02;
+      font-weight: 600;
+    }
     .edit-button {
       @include buttonempty;
-      height: fit-content;
       margin-left: 20px;
     }
   }
   &_input {
     display: flex;
-    input,
+    input {
+      @include inputfield;
+    }
     button {
       @include buttonempty;
     }
   }
+}
+
+.save-button {
+  @include buttonfull;
 }
 
 .input-wrapper {
