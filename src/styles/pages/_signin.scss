@@ -3,23 +3,24 @@
 .signin-page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 0px 12%;
+    margin-inline: auto;
+    margin-top: 60px;
     box-sizing: border-box;
     border-radius: 30px;
     background-color: $White;
     width: 440px;
+    height: fit-content;
     padding: 2rem;
     &_content {
         display: flex;
         flex-direction: column;
         margin-bottom: 20px;
-        h1, h2 {
+        h1, h3 {
             color: $Blackgreen;
             text-align: left;
-            margin: 10px 0px;
+            margin: 7px 0px;
         }
-        h2 {
+        h3 {
             font-weight: 400;
         }
         .text-span-signin {
@@ -28,7 +29,6 @@
         }
     }
 }
-
 
 form {
     display: flex;
@@ -45,7 +45,7 @@ form {
             margin-bottom: 8px; 
         }
         input {
-            @include buttonempty;
+            @include inputfield;
         }
     }
 }
@@ -65,11 +65,15 @@ form {
 
 .sign-in-button {
     @include buttonfull;
-    border-radius: 50px;
     display: block;
     width: 100%;
     margin-top: 40px;
 }
+
+.sign-in-button:hover {
+    @include buttonhoverfull;
+}
+
 
 // Full screen
 /*

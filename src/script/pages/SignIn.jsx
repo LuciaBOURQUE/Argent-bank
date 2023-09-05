@@ -49,7 +49,7 @@ export default function SignIn() {
             <br />
             <span className="text-span-signin">Argent Bank</span>
           </h1>
-          <h2>And access of all your transactions!</h2>
+          <h3>And access of all your transactions!</h3>
         </div>
 
         <form method="post" onSubmit={handleSubmit}>

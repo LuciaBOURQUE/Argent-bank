@@ -13,24 +13,23 @@ export default function EditProfil() {
     lastName: "" /* Stark - Rogers */,
   })
 
-  const onChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value })
-  }
-
   const [inputShow, setInputShow] = useState(false)
   const onClick = () => {
     setInputShow(true)
   }
 
+  const onChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value })
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log("Cliker")
     const response = await putUserInfos(token, user.firstName, user.lastName)
     console.log(response)
   }
 
   return (
-    <header className="header-profil">
+    <section className="header-profil">
       <div className="header-profil_edit">
         <h1>Welcome back {firstName}</h1>
         <button
@@ -76,6 +75,6 @@ export default function EditProfil() {
           </div>
         </div>
       ) : null}
-    </header>
+    </section>
   )
 }

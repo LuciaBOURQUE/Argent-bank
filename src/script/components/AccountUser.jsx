@@ -9,8 +9,8 @@ export default function AccountUser({
   return (
     <section className="account">
       <div className="account__content">
-        <h3 className="account-title">{accountTitle}</h3>
-        <p className="account-amount">{accountAmount}</p>
+        <p className="account-title">{accountTitle}</p>
+        <h2 className="account-amount">{accountAmount}</h2>
         <p className="account-amount-description">{accountDescription}</p>
       </div>
       <button className="transaction-button">View transactions</button>

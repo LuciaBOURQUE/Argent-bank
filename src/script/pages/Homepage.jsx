@@ -11,16 +11,16 @@ export default function Homepage() {
       <header>
         <Navigation />
       </header>
-      <main className="hero">
-        <section className="hero_title">
+      <main className="home-page">
+        <section className="home-page_title">
           <h1>
             No fees. <br />
             No minimum deposit. <br />
             <span className="text-span">High interest rates.</span>
           </h1>
-          <h2>Open a saving account with Argent Bank today!</h2>
+          <h3>Open a saving account with Argent Bank today!</h3>
         </section>
-        <section className="hero_cards">
+        <section className="home-page_cards">
           <Cards
             iconImage={iconcat}
             cardTitle={"You are our #1 priority"}

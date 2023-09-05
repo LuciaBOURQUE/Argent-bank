@@ -1,70 +1,50 @@
 @import "../utils/variables";
+@import "../../styles/utils/mixins";
 
 .nav-profil {
     margin: 20px 12%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &_setting {
-        background-color: white;
+    .main-nav-logo {
         display: flex;
         align-items: center;
-    }
-    &_signin, .nav-setting-button {
-        color: $Green01 ;
-        font-size: 18px;
-        font-weight: bold;
-        border: 2px solid rgba(36, 75, 48, 0.5);
-        border-radius: 25px;
-        padding: 10px 15px;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        margin-right: 0.5rem;
-        img {
-            margin-right: 10px;
-        }
+        mix-blend-mode: darken;
+        &__image {
+            max-width: 100%;
+            width: 200px;
+          }
     }
 }
 
-.main-nav-logo {
+// Logout's navigation
+.nav-profil_logout {
     display: flex;
     align-items: center;
-    mix-blend-mode: darken;
-    &__image {
-        max-width: 100%;
-        width: 200px;
-      }
+}
+
+// Login's navigation
+.nav-profil_signin, .nav-setting-button {
+    @include buttonempty;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 0.5rem;
+    img {
+        margin-right: 10px;
+    }
 }
 
 .nav-profil_signin:hover, .nav-setting-button:hover {
-    border: 2px solid transparent;
-    background-color: rgba(89, 173, 113, 0.5);
-    color: $Green01;
+    @include buttonhoverempty;
 }
 
 .nav-setting-content {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    a {
-        margin-left: 5px;
-        text-decoration: none;
-        font-size: 25px;
-        font-weight: bold;
-        color: #2c3e50;
-    }
-}
-
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 20px;
-    a {
-        font-weight: bold;
-        color: #2c3e50;
-    }
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    color: $Green01 ;
 }
 
 // Full screen

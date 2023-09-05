@@ -1,15 +1,15 @@
-.hero {
+.home-page {
+    margin: 30px 12%;
     display: flex;
     justify-content: space-between;
     background-color: $White;
     border-radius: 30px;
-    margin: 0px 12%;
     padding: 5% 5%;
     height: 400px;
     &_title {
         display: flex;
         flex-direction: column;
-        h1, h2 {
+        h1, h3 {
             color: $Blackgreen;
             text-align: left;
             margin: 0px;
@@ -21,9 +21,9 @@
     }
 }
 
-.hero_cards {
+.home-page_cards {
     position: relative;
-    width: 60%;
+    width: 50%;
     background-image: url('../../assets/background.png');
     background-position: center;
     background-size: contain;
@@ -56,18 +56,14 @@
     }
 }
 
-.hero_title h2 {
+.home-page_title h3 {
     font-weight: lighter;
     margin-top: 20px;
 }
 
 // Full screen
 @media (min-width: 1700px) {
-    .hero {
-        margin: 0px 15%;
+    .home-page {
+        margin: 30px 15%;
     }
-}
-
-// portable
-@media (max-width: 650px) {
 }

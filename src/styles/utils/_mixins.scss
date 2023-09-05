@@ -2,20 +2,40 @@
 
 @mixin buttonfull {
     border: transparent;
-    border-radius: 5px;
+    border-radius: 50px;
     background-color: $Green01;
     color: $White;
-    font-weight:lighter;
-    padding: 10px;
-    font-size: 1.1rem;
+    padding: 13px 20px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 @mixin buttonempty {
-    border: 1px solid rgba(84, 87, 236, 0.5);
+    border: 2px solid rgba(36, 75, 48, 0.3);
+    border-radius: 50px;
+    color: $Green01;
+    padding: 13px 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@mixin inputfield {
+    border: 2px solid rgba(36, 75, 48, 0.3);
     border-radius: 5px;
-    background-color: $White;
     color: $Green01;
     font-weight:lighter;
-    padding: 10px;
-    font-size: 1.1rem;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@mixin buttonhoverempty {
+    border: 2px solid transparent;
+    background-color: rgba(89, 173, 113, 0.5);
+    color: $Green01;
+}
+
+@mixin buttonhoverfull {
+    background-color: $Green02;
+    color: $White;
 }
