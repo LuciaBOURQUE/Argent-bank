@@ -23,6 +23,7 @@ h1 {
 
 h2 {
   font-size: 40px;
+  font-weight: 400;
 }
 
 h3 {
@@ -37,9 +38,26 @@ a {
   font-family: "Inter", Avenir, Helvetica, Arial, sans-serif;
 }
 
-@media (max-width: 1250px) {
+@media only screen and (min-width: 600px) and (max-width: 1250px) {
   h1 {
     font-size: 35px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 20px;
   }
 }
 .nav-profil {
@@ -98,6 +116,31 @@ a {
     margin: 20px 15%;
   }
 }
+@media only screen and (min-width: 600px) and (max-width: 1250px) {
+  .nav-profil {
+    margin: 20px 5%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .nav-profil {
+    margin: 20px 2%;
+  }
+  .nav-setting-content {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+  }
+  .nav-setting-button, .nav-profil_signin {
+    border-radius: 50%;
+    padding: 13px 13px;
+  }
+  .nav-setting-button img, .nav-profil_signin img {
+    margin: 0px;
+  }
+  .nav-setting-button span, .nav-profil_signin span {
+    display: none;
+  }
+}
 .footer {
   display: flex;
   justify-content: center;
@@ -126,12 +169,10 @@ a {
 .account__content .account-title {
   margin: 0;
   padding: 0;
-  font-size: 1rem;
   font-weight: normal;
 }
 .account__content .account-amount {
   margin: 0;
-  font-size: 2.5rem;
   font-weight: bold;
 }
 .account__content .account-amount-description {
@@ -155,6 +196,12 @@ a {
   color: #FFFFFF;
 }
 
+@media only screen and (max-width: 650px) {
+  .account {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .header-profil {
   width: 80%;
   display: flex;
@@ -167,27 +214,20 @@ a {
   display: flex;
   align-items: center;
 }
-.header-profil_edit h2 {
-  font-weight: 500;
-}
 .header-profil_edit span {
   color: #59AD71;
   font-weight: 600;
 }
 .header-profil_edit .edit-button {
+  cursor: pointer;
   background-color: transparent;
-  border: 2px solid rgba(36, 75, 48, 0.3);
-  border-radius: 50px;
+  border: transparent;
   color: #244B30;
-  padding: 13px 20px;
+  text-decoration: underline;
+  padding: 0;
   font-size: 16px;
   font-weight: 600;
-  margin-left: 20px;
-}
-.header-profil_edit .edit-button:hover {
-  border: 2px solid transparent;
-  background-color: rgba(89, 173, 113, 0.5);
-  color: #244B30;
+  margin: 20px 0px 0px 15px;
 }
 .header-profil_input {
   display: flex;
@@ -216,7 +256,7 @@ a {
   color: #244B30;
 }
 
-.save-button {
+.save-button, .cancel-button {
   border: transparent;
   border-radius: 50px;
   background-color: #244B30;
@@ -225,7 +265,7 @@ a {
   font-size: 16px;
   font-weight: 600;
 }
-.save-button:hover {
+.save-button:hover, .cancel-button:hover {
   background-color: #59AD71;
   color: #FFFFFF;
 }
@@ -249,6 +289,39 @@ a {
   align-items: flex-start;
 }
 
+@media only screen and (min-width: 600px) and (max-width: 1250px) {
+  .header-profil .edit-button {
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .header-profil h2 {
+    margin-bottom: 10px;
+  }
+  .header-profil_edit {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header-profil_input {
+    flex-direction: column;
+  }
+  .header-profil_edit .edit-button {
+    margin: 0px;
+  }
+  .input-bloc1 {
+    align-items: flex-start;
+    position: relative;
+  }
+  .input-bloc1 button {
+    position: absolute;
+    top: 112px;
+  }
+  .input-bloc2 {
+    align-items: flex-end;
+  }
+}
 .cards {
   display: flex;
   flex-direction: column;
@@ -278,6 +351,11 @@ a {
   margin: 10px 0px 5px 0px;
 }
 
+@media only screen and (max-width: 850px) {
+  .cards {
+    width: unset;
+  }
+}
 .icon {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
@@ -362,11 +440,45 @@ a {
     margin: 30px 15%;
   }
 }
+@media only screen and (min-width: 600px) and (max-width: 1250px) {
+  .home-page {
+    margin: 30px 5%;
+  }
+  .home-page_title {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .home-page {
+    flex-direction: column;
+    margin: 30px 2%;
+    height: auto;
+  }
+  .home-page_title {
+    width: 100%;
+  }
+  .home-page_cards {
+    background-image: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: inherit;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .home-page_cards .cards:nth-child(n) {
+    margin-bottom: 20px;
+    position: inherit;
+    right: auto;
+    top: auto;
+    z-index: auto;
+  }
+}
 .signin-page {
   display: flex;
   flex-direction: column;
   margin-inline: auto;
-  margin-top: 60px;
+  margin-top: 5%;
   box-sizing: border-box;
   border-radius: 30px;
   background-color: #FFFFFF;
@@ -380,7 +492,7 @@ a {
   flex-direction: column;
   margin-bottom: 20px;
 }
-.signin-page_content h1, .signin-page_content h3 {
+.signin-page_content h2, .signin-page_content h3 {
   color: #0D1117;
   text-align: left;
   margin: 7px 0px;
@@ -446,12 +558,12 @@ form .input-wrapper input {
   color: #FFFFFF;
 }
 
-/*
-@media (min-width: 1700px) {
-    .signin {
-        margin: 0px 15%;
-    }
-}*/
+@media only screen and (max-width: 550px) {
+  .signin-page {
+    margin: 5% 5%;
+    width: unset;
+  }
+}
 .user-page {
   padding: 0px 12%;
   background-color: #DDE2EA;
@@ -460,6 +572,11 @@ form .input-wrapper input {
 @media (min-width: 1700px) {
   .user-page {
     padding: 20px 15%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1250px) {
+  .user-page {
+    padding: 20px 5%;
   }
 }
 .error-page {

@@ -5,6 +5,7 @@ h1 {
 
 h2 {
     font-size: 40px;
+    font-weight: 400;
 }
 
 h3 {
@@ -19,14 +20,29 @@ a {
     font-family: "Inter", Avenir, Helvetica, Arial, sans-serif;
 }
 
-// tablette
-@media (max-width: 1250px) {
+
+// Tablet version, medium devices (landscape tablets, between 600px and 800px)
+@media only screen and (min-width: 600px) and (max-width: 1250px) {
     h1 {
         font-size: 35px;
     }
+    h2 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 20px;
+    }
 }
 
-
-// portable
-@media (max-width: 650px) {
+// Mobile version, extra small devices (phones, 600px and down)
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 20px;
+    }
 }

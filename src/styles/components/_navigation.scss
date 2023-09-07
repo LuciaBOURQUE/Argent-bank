@@ -43,9 +43,36 @@
     color: $Green01 ;
 }
 
-// Full screen
+// Full screen, extra large devices (large laptops and desktops, 1700px and up)
 @media (min-width: 1700px) {
     .nav-profil {
         margin: 20px 15%;
+    }
+}
+
+// Tablet version, medium devices (landscape tablets, between 600px and 1250px)
+@media only screen and (min-width: 600px) and (max-width: 1250px) {
+    .nav-profil {
+        margin: 20px 5%;
+    }
+}
+
+// Mobile version, extra small devices (phones, 850px and down)
+@media only screen and (max-width: 850px) {
+    .nav-profil {
+        margin: 20px 2%;
+    }
+    .nav-setting-content {
+        display: flex;
+    flex-direction: column;
+        font-size: 18px;
+    }
+    .nav-setting-button, .nav-profil_signin {
+        border-radius: 50%;
+        padding: 13px 13px;
+        img {margin: 0px;}
+        span {
+            display: none;
+        }
     }
 }

@@ -61,9 +61,46 @@
     margin-top: 20px;
 }
 
-// Full screen
+// Full screen, extra large devices (large laptops and desktops, 1700px and up)
 @media (min-width: 1700px) {
     .home-page {
         margin: 30px 15%;
+    }
+}
+
+// Tablet version, medium devices (landscape tablets, between 600px and 1250px)
+@media only screen and (min-width: 600px) and (max-width: 1250px) {
+    .home-page {
+        margin: 30px 5%;
+        &_title {
+            width: 40%;
+        }
+    }
+}
+
+// Mobile version, extra small devices (phones, 850px and down)
+@media only screen and (max-width: 850px) {
+    .home-page {
+        flex-direction: column;
+        margin: 30px 2%;
+        height: auto;
+        &_title {
+            width: 100%;
+        }
+        &_cards {
+            background-image: none;
+            width: fit-content;
+            position: inherit;
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            .cards:nth-child(n) {
+                margin-bottom: 20px;
+                position: inherit;
+                right: auto;
+                top: auto;
+                z-index: auto;
+            }
+        }
     }
 }

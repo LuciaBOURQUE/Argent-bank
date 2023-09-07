@@ -29,7 +29,6 @@ export default function EditProfil() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log("clické")
     try {
       const response = await putUserInfos(token, user.firstName, user.lastName)
       dispatch(
@@ -94,7 +93,7 @@ export default function EditProfil() {
                 placeholder={lastName}
               />
             </div>
-            <button className="edit-button" onClick={onClickclose}>
+            <button className="cancel-button" onClick={onClickclose}>
               Cancel
             </button>
           </div>

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     margin-inline: auto;
-    margin-top: 60px;
+    margin-top: 5%;
     box-sizing: border-box;
     border-radius: 30px;
     background-color: $White;
@@ -15,7 +15,7 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 20px;
-        h1, h3 {
+        h2, h3 {
             color: $Blackgreen;
             text-align: left;
             margin: 7px 0px;
@@ -70,11 +70,10 @@ form {
     margin-top: 40px;
 }
 
-
-// Full screen
-/*
-@media (min-width: 1700px) {
-    .signin {
-        margin: 0px 15%;
+// Mobile version, extra small devices (phones, 550px and down)
+@media only screen and (max-width: 550px) {
+    .signin-page {
+        margin: 5% 5%;
+        width: unset;
     }
-}*/
+}

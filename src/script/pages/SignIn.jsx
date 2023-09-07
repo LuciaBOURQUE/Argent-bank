@@ -44,11 +44,11 @@ export default function SignIn() {
       <main className="signin-page">
         <div className="signin-page_content">
           {" "}
-          <h1>
+          <h2>
             Sign in to
             <br />
             <span className="text-span-signin">Argent Bank</span>
-          </h1>
+          </h2>
           <h3>And access of all your transactions!</h3>
         </div>
 

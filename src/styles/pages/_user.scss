@@ -6,9 +6,16 @@
     background-color: #DDE2EA;
 }
 
-// Full screen
+// Full screen, extra large devices (large laptops and desktops, 1700px and up)
 @media (min-width: 1700px) {
     .user-page {
         padding: 20px 15%;
+    }
+}
+
+// Tablet version, medium devices (landscape tablets, between 600px and 1250px)
+@media only screen and (min-width: 600px) and (max-width: 1250px) {
+    .user-page {
+        padding: 20px 5%;
     }
 }

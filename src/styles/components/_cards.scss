@@ -26,3 +26,10 @@
     margin: 10px 0px 5px 0px;
   }
 }
+
+// Tablet version, medium devices (landscape tablets, between 600px and 800px)
+@media only screen and (max-width: 850px) {
+  .cards {
+    width: unset;
+  }
+}

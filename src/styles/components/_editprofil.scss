@@ -11,16 +11,13 @@
   &_edit {
     display: flex;
     align-items: center;
-    h2 {
-      font-weight: 500;
-    }
     span {
       color: $Green02;
       font-weight: 600;
     }
     .edit-button {
-      @include buttonempty;
-      margin-left: 20px;
+      @include buttonsecondary;
+      margin: 20px 0px 0px 15px;
     }
   }
   &_input {
@@ -34,7 +31,7 @@
   }
 }
 
-.save-button {
+.save-button, .cancel-button {
   @include buttonfull;
 }
 
@@ -53,4 +50,45 @@
 }
 .input-bloc2 {
   align-items: flex-start;
+}
+
+// Tablet version, medium devices (landscape tablets, between 600px and 1250px)
+@media only screen and (min-width: 600px) and (max-width: 1250px) {
+  .header-profil .edit-button {
+    margin-top: 10px;
+  }
+}
+
+// Mobile version, extra small devices (phones, 780px and down)
+@media only screen and (max-width: 780px) {
+  .header-profil {
+    h2 {
+      margin-bottom: 10px;
+    }
+    &_edit {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+
+// Mobile version, extra small devices (phones, 600px and down)
+@media only screen and (max-width: 600px) {
+  .header-profil {
+    &_input {
+      flex-direction: column;
+    }
+  }
+  .header-profil_edit .edit-button {margin: 0px;}
+  .input-bloc1 {
+    align-items: flex-start;
+    position: relative;
+    button {
+      position: absolute;
+      top: 112px;
+    }
+  }
+  .input-bloc2 {
+    align-items: flex-end;
+  }
 }

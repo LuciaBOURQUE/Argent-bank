@@ -16,7 +16,7 @@ The API Backend is provided by the team where all Swagger documentation is insid
 ## Prerequisites
 
 - **React** (version 18.2.0)
-- **React** (version 4.2.1)
+- **Redux** (version 4.2.1)
 - **Node.js** (v19.1.0)
 
 ## Start project - Installation

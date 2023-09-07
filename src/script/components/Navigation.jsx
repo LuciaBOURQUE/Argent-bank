@@ -41,11 +41,11 @@ export default function ProfilNavigation() {
       {showLogOut ? (
         <div className="nav-profil_logout">
           <NavLink className="nav-setting-content" to="/profile">
-            {firstName} {lastName}
+            <span>{firstName}</span> <span>{lastName}</span>
           </NavLink>{" "}
           <NavLink to="/" onClick={logOutProfil} className="nav-setting-button">
             <img className="icon-profile" alt="" src={logout} />
-            Sign out
+            <span>Sign out</span>
           </NavLink>
         </div>
       ) : null}
@@ -53,7 +53,7 @@ export default function ProfilNavigation() {
       {showSignin ? (
         <NavLink to="/login" className="nav-profil_signin">
           <img className="icon-profile" alt="" src={login} />
-          Sign In
+          <span>Sign In</span>
         </NavLink>
       ) : null}
     </nav>
