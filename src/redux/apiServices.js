@@ -30,7 +30,7 @@ export const getUserLogin = async (email, password) => {
 /**
  * This post's API allows you to retrieve a user profile by sending
  * the token as a parameter associated with the profile.
- * @param {*} token
+ * @param {string} token
  * @returns a object with profil data (email, firstName, lastName, id)
  */
 export const getUserToken = async (token) => {
@@ -53,7 +53,7 @@ export const getUserToken = async (token) => {
 /**
  * This put's API allows you to update the user profile, in particular the firstName and lastName sending in parameters,
  * by sending the token as a parameter associated with the profile.
- * @param {*} token
+ * @param {string} token
  * @param {string} firstName
  * @param {string} lastName
  * @returns a new object of user with firstName and lastName edit

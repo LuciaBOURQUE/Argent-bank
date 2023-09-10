@@ -1,4 +1,4 @@
-# Argent Bank 💲
+# Argent Bank
 
 13's project of Openclassrooms
 
@@ -23,7 +23,7 @@ The API Backend is provided by the team where all Swagger documentation is insid
 
 1. BACKEND
 
-- For this project you will need to launch the micro Api, to follow the procedure please follow the steps in this **[link](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API.git)**
+- For this project, you juste have the frontend part, for the backend you will need to launch the micro Api following the steps procedure in this **[link](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API.git)**
 
 2. FRONTEND
 

@@ -20,6 +20,6 @@ export default function AccountUser({
 
 AccountUser.propTypes = {
   accountTitle: PropTypes.string.isRequired,
-  accountAmount: PropTypes.string.isRequired, // censé être un chiffre en dollars
+  accountAmount: PropTypes.string.isRequired,
   accountDescription: PropTypes.string.isRequired,
 }

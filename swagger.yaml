@@ -49,7 +49,7 @@ paths:
         - in: path
           name: id
           required: true
-          description: information created
+          description: Need of transaction's id
           type: integer
         - in: body
           name: body
@@ -84,7 +84,7 @@ paths:
         - in: path
           name: id
           required: true
-          description: Update user current month's transactions
+          description: Need of transaction's id
           type: integer
         - in: body
           name: body
