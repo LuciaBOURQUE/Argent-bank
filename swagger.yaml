@@ -10,7 +10,7 @@ schemes:
   - http
 paths:
   /user/profile/transactions:
-    post:
+    get:
       security:
         - Bearer: []
       tags:
@@ -21,6 +21,7 @@ paths:
         - in: header
           name: Authorization
           description: Attach Bearer JWT token
+          type: string
           required: true
       produces:
         - application/json
@@ -28,7 +29,43 @@ paths:
         "200":
           description: User transactions retrieved successully
           schema:
-            $ref: "#/definitions/Transactions"
+            $ref: "#/definitions/TransactionsResponse"
+        "500":
+          description: Internal Server Error
+  /user/profile/transactions/{id}:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - User Transaction
+      summary: View one of transaction details
+      description: Details of transaction
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          type: string
+          required: true
+        - in: path
+          name: id
+          required: true
+          description: information created
+          type: integer
+        - in: body
+          name: body
+          description: Details of transaction
+          required: true
+          schema:
+            $ref: "#/definitions/TransactionsId"
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Signup Successfully
+          schema:
+            $ref: "#/definitions/DetailTransactionsResponse"
+        "404":
+          description: Transaction not found
         "500":
           description: Internal Server Error
     put:
@@ -42,44 +79,26 @@ paths:
         - in: header
           name: Authorization
           description: Attach Bearer JWT token
+          type: string
           required: true
+        - in: path
+          name: id
+          required: true
+          description: Update user current month's transactions
+          type: integer
         - in: body
           name: body
-          description: Update user current month's transactions
           required: true
+          description: Update user current month's transactions
           schema:
-            $ref: "#/definitions/Transactions"
+            $ref: "#/definitions/TransactionsId"
       produces:
         - application/json
       responses:
         "200":
           description: User profile retrieved successully
           schema:
-            $ref: "#/definitions/ApiResponse"
-        "500":
-          description: Internal Server Error
-  /user/profile/transactions/{name-transaction}:
-    post:
-      tags:
-        - User Transaction
-      summary: View transaction details
-      description: API for Signup
-      parameters:
-        - in: body
-          name: body
-          description: Signup Payload
-          required: true
-          schema:
-            $ref: "#/definitions/User"
-      produces:
-        - application/json
-      responses:
-        "200":
-          description: Signup Successfully
-          schema:
-            $ref: "#/definitions/ApiResponse"
-        "400":
-          description: Invalid Fields
+            $ref: "#/definitions/DetailTransactionsResponse"
         "500":
           description: Internal Server Error
 securityDefinitions:
@@ -88,29 +107,33 @@ securityDefinitions:
     name: Authorization
     in: header
 definitions:
-  Transactions:
+  TransactionsId:
+    type: object
     properties:
-      email:
+      id:
         type: string
-        description: user email
-      password:
+      category:
         type: string
-        description: user password
-      firstName:
+        description: category
+      notes:
         type: string
-        description: user first name
-      lastName:
-        type: string
-        description: user last name
-  Login:
-    properties:
-      email:
-        type: string
-        description: user email
-      password:
-        type: string
-        description: user password
-  ApiResponse:
+        description: notes
+  TransactionsResponse:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+        date:
+          type: string
+        description:
+          type: string
+        amount:
+          type: number
+        balance:
+          type: number
+  DetailTransactionsResponse:
     type: object
     properties:
       status:
@@ -122,17 +145,7 @@ definitions:
         properties:
           id:
             type: string
-          email:
+          category:
             type: string
-  LoginResponse:
-    type: object
-    properties:
-      token:
-        type: string
-  UserProfile:
-    type: object
-    properties:
-      firstName:
-        type: string
-      lastName:
-        type: string
+          notes:
+            type: string
