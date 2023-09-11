@@ -51,12 +51,6 @@ paths:
           required: true
           description: Need of transaction's id
           type: integer
-        - in: body
-          name: body
-          description: Details of transaction
-          required: true
-          schema:
-            $ref: "#/definitions/TransactionsId"
       produces:
         - application/json
       responses:
@@ -66,6 +60,8 @@ paths:
             $ref: "#/definitions/DetailTransactionsResponse"
         "404":
           description: Transaction not found
+        "403":
+          description: Access Denied – You don’t have permission to access
         "500":
           description: Internal Server Error
     put:
@@ -99,6 +95,10 @@ paths:
           description: User profile retrieved successully
           schema:
             $ref: "#/definitions/DetailTransactionsResponse"
+        "403":
+          description: Wrong type the good type is string
+        "404":
+          description: Transaction's detail not found
         "500":
           description: Internal Server Error
 securityDefinitions:
@@ -110,8 +110,6 @@ definitions:
   TransactionsId:
     type: object
     properties:
-      id:
-        type: string
       category:
         type: string
         description: category
@@ -143,8 +141,6 @@ definitions:
       body:
         type: object
         properties:
-          id:
-            type: string
           category:
             type: string
           notes:
